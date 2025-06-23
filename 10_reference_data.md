@@ -1,0 +1,31 @@
+## Reference Data Appendix (AML / KYC & Adverse‑Media Screening)
+
+Open‑source or freely downloadable data sets that compliance, sanctions and due‑diligence teams commonly load into screening, monitoring or risk‑scoring engines. All links point to the authoritative source; licence notes summarise redistribution terms.
+
+| Data set                                              | Coverage & focus                                                                                                                      | Access / licence notes                                               |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **OpenSanctions**                                     | Aggregates 60 + sanctions lists, politically‑exposed‑person (PEP) files and crime databases; ships bulk CSV / Parquet and a Graph API | Code MIT; data CC BY‑NC 4.0; free & paid tiers                       |
+| **UN Security Council – Consolidated Sanctions List** | Global UN asset‑freeze / travel‑ban targets                                                                                           | XML/CSV; public‑domain download                                      |
+| **OFAC SDN & Non‑SDN Lists**                          | US sanctions programmes (SDN, SSI, NS‑CMIC, CAPTA…)                                                                                   | CSV & fixed‑width; free reuse with attribution                       |
+| **EU Financial Sanctions Files (FSF)**                | EU‑wide asset‑freeze designations                                                                                                     | CSV/XML via data.europa.eu; EU Open Data Licence v1.1                |
+| **UK OFSI Consolidated List**                         | UK post‑Brexit sanctions list                                                                                                         | CSV/XLSX; Open Government Licence v3.0                               |
+| **SECO (Switzerland) Sanctions List**                 | Sanctions targets under Swiss law; mirrors UN/EU where adopted                                                                        | XLS/CSV on admin.ch; free reuse under Swiss opendata terms           |
+| **Canada – Consolidated Autonomous Sanctions List**   | Entities sanctioned under SEMA & JVCFOA                                                                                               | XML/PDF; free download from Global Affairs Canada                    |
+| **Australia DFAT Consolidated List**                  | Persons/entities subject to Australian autonomous sanctions                                                                           | CSV/XLSX; open access on dfat.gov.au                                 |
+| **US BIS Consolidated Entity List**                   | Export‑control designations (Entity, MEU, UVL, etc.)                                                                                  | CSV; US Gov public‑domain data                                       |
+| **US State Dept DDTC Debarred List**                  | Statutorily debarred parties under ITAR/AECA                                                                                          | HTML / CSV builds; public‑domain                                     |
+| **GLEIF – Open LEI**                                  | 2.8 m + Legal Entity Identifiers incl. parent hierarchy                                                                               | Daily delta CSV/JSON; CC0 1.0 public domain                          |
+| **Open Ownership BODS datasets**                      | Prototype global beneficial‑ownership register; country feeds                                                                         | Bulk JSON/CSV under CC0; API & dumps live during transition          |
+| **ICIJ Offshore Leaks (Panama / Paradise etc.)**      | \~ 810 k offshore companies & officers from investigative leaks                                                                       | Bulk CSV & Neo4j dumps; CC BY‑SA 4.0                                 |
+| **OpenCorporates – Global Company Registry**          | 240 m + company records across 140 jurisdictions                                                                                      | Bulk data via subscription; open licence for non‑commercial research |
+| **Interpol Red Notices**                              | Wanted‑person notices; useful early‑stage fraud signal                                                                                | Public search portal (HTML); scrape or licensed API                  |
+| **PEPs collection (OpenSanctions “peps” dataset)**    | Unified \~ 190 k office‑holders & senior officials                                                                                    | Distributed within OpenSanctions; same CC BY‑NC 4.0 terms            |
+| **GDELT v2 Events & Mentions**                        | Global real‑time news‑events corpus for adverse‑media & geo‑risk                                                                      | Entire DB free; MIT licence on code; data free under GDELT terms     |
+
+### Usage patterns
+
+* **Primary vs. source‑of‑truth** Many institutions consume harmonised feeds like **OpenSanctions** but still archive the official “gold‑source” files (OFAC, UN, EU, SECO, Canada, Australia) for audit defensibility.
+* **Export‑control overlays** Lists such as **BIS Entity** and **DDTC Debarred** complement financial sanctions by flagging trade‑restricted counterparties.
+* **Beneficial‑ownership resolution** Pairing **GLEIF Open LEI** and **Open Ownership** graphs with sanctions data surfaces parent‑child links not explicit on the sanctions lists.
+* **Adverse‑media risk‑scoring** Datasets like **GDELT** and **ICIJ Offshore Leaks** feed negative‑news models and reputational‑risk dashboards.
+* **PEP tiering** The aggregated PEP dataset lets teams assign enhanced‑due‑diligence tiers without licensing multiple commercial files.
